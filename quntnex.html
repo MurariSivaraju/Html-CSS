@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Offerings</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://example.com/tech-background.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: lightgreen;
+        }
+
+        h3 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s, transform 0.2s;
+            border-radius: 5px;
+        }
+
+        td:hover {
+            background-color: #f9f9f9;
+            transform: scale(1.02);
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+        .course-details {
+            margin-top: 20px;
+            display: none; /* Initially hidden */
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: rgba(241, 241, 241, 0.9); /* Semi-transparent */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h4 {
+            color: #007bff;
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        function toggleDetails(course) {
+            const details = document.getElementById(course + '-details');
+            const isVisible = details.style.display === 'block';
+            details.style.display = isVisible ? 'none' : 'block';
+            document.getElementById(course).setAttribute('aria-expanded', !isVisible);
+        }
+    </script>
+</head>
+<body>
+    <h3>Courses Offer</h3>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" id="java" name="courses" value="Java FullStack" onclick="toggleDetails('java')" aria-expanded="false"> 
+                    <label for="java">Java FullStack</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="python" name="courses" value="Python FullStack" onclick="toggleDetails('python')" aria-expanded="false"> 
+                    <label for="python">Python FullStack</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="automation" name="courses" value="Automation Testing" onclick="toggleDetails('automation')" aria-expanded="false"> 
+                    <label for="automation">Automation Testing</label>
+                </td>
+            </tr>
+        </table>
+
+        <div id="java-details" class="course-details">
+            <h4>Java FullStack Course Details</h4>
+            <p>This course covers both front-end and back-end development using Java. You will learn:</p>
+            <ul>
+                <li>Java Basics</li>
+                <li>Spring Framework</li>
+                <li>RESTful Services</li>
+                <li>HTML, CSS, and JavaScript for Frontend</li>
+                <li>Database Management with MySQL</li>
+            </ul>
+        </div>
+
+        <div id="python-details" class="course-details">
+            <h4>Python FullStack Course Details</h4>
+            <p>This course teaches you full-stack development using Python. You will learn:</p>
+            <ul>
+                <li>Python Fundamentals</li>
+                <li>Django Framework</li>
+                <li>RESTful APIs</li>
+                <li>HTML, CSS, and JavaScript for Frontend</li>
+                <li>PostgreSQL Database Management</li>
+            </ul>
+        </div>
+
+        <div id="automation-details" class="course-details">
+            <h4>Automation Testing Course Details</h4>
+            <p>This course focuses on automation testing techniques and tools. You will learn:</p>
+            <ul>
+                <li>Introduction to Testing</li>
+                <li>Selenium WebDriver</li>
+                <li>TestNG Framework</li>
+                <li>API Testing with Postman</li>
+                <li>Continuous Integration and Delivery</li>
+            </ul>
+        </div>
+    </form>
+</body>
+</html>
